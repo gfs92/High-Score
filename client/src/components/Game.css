@@ -1,0 +1,9 @@
+.Game {
+  align-items: center;
+  background-color: green;
+  color: white;
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 40vh;
+  width: 30vh;
+}

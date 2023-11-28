@@ -1,0 +1,5 @@
+.Leaderboard {
+  background-color: rgb(108, 119, 141);
+  height: 100vh;
+  overflow-y: auto;
+}
