@@ -4,20 +4,29 @@ import "./Leaderboard.css";
 import { API_URL } from "../constants.js";
 
 export default function Leaderboard() {
-  const gameId = useParams();
-  const [game, setGame] = useState([]);
+  const { id } = useParams();
+  const [game, setGame] = useState({ name: "", scores: [] });
 
   useEffect(() => {
-    fetch(`${API_URL}/games/${gameId.id}`)
+    fetch(`${API_URL}/${id}`)
       .then((response) => response.json())
-      .then((data) => {
-        setGame(data.data.game);
+      .then((res) => {
+        setGame(res.data.game);
       });
-  }, [gameId]);
+  }, [id]);
+
+  const sortedScores = [...game.scores].sort((a, b) => b.score - a.score);
 
   return (
     <div className="Leaderboard">
       <div>Leaderboard for {game.name}</div>
+      <ul>
+        {sortedScores.map(({ username, score }, index) => (
+          <li key={index}>
+            {username} : {score}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

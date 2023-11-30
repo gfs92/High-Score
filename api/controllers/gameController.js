@@ -19,7 +19,7 @@ exports.getAllGames = async (req, res) => {
 
 exports.getGame = async (req, res) => {
   try {
-    const game = await Game.findById(req.params.id);
+    const game = await Game.findById(req.params.gameId);
     res.status(200).json({
       status: "success",
       data: {
@@ -54,7 +54,7 @@ exports.createGame = async (req, res) => {
 
 exports.updateGame = async (req, res) => {
   try {
-    const game = await Game.findByIdAndUpdate(req.params.id, req.body, {
+    const game = await Game.findByIdAndUpdate(req.params.gameId, req.body, {
       new: true,
       runValidators: true,
     });
@@ -74,7 +74,7 @@ exports.updateGame = async (req, res) => {
 
 exports.deleteGame = async (req, res) => {
   try {
-    await Game.findByIdAndDelete(req.params.id);
+    await Game.findByIdAndDelete(req.params.gameId);
     res.status(204).json({
       status: "success",
       data: null,

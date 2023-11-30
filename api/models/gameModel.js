@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Score = require("./scoreModel");
 
 const gameSchema = new mongoose.Schema({
   name: {
@@ -6,10 +7,7 @@ const gameSchema = new mongoose.Schema({
     required: [true, "A name for your game is required"],
     unique: [true, "A game with this name already exists"],
   },
-  score: {
-    type: Number,
-    // required: [true, "A score is required"],
-  },
+  scores: [Score.schema],
 });
 
 const Game = mongoose.model("Game", gameSchema);

@@ -7,10 +7,10 @@ export default function Game() {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_URL}/games`)
+    fetch(`${API_URL}`)
       .then((response) => response.json())
-      .then((data) => {
-        setGames(data.data.games);
+      .then((res) => {
+        setGames(res.data.games);
       });
   }, []);
 

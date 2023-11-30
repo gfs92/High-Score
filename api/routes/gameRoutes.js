@@ -1,7 +1,10 @@
 const express = require("express");
 const gameController = require("../controllers/gameController");
+const scoreRouter = require("./scoreRoutes");
 
 const router = express.Router();
+
+router.use("/:gameId/scores", scoreRouter);
 
 router
   .route("/")
@@ -9,7 +12,7 @@ router
   .post(gameController.createGame);
 
 router
-  .route("/:id")
+  .route("/:gameId")
   .get(gameController.getGame)
   .patch(gameController.updateGame)
   .delete(gameController.deleteGame);

@@ -1,7 +1,4 @@
-// const express = require("express");
 const mongoose = require("mongoose");
-
-// const app = express();
 
 const app = require("./app");
 
@@ -16,20 +13,6 @@ mongoose
   });
 
 const db = mongoose.connection;
-
-// app.get("/games", (req, res) => {
-//   res.json({
-//     games: [
-//       "dummy1",
-//       "dummy2",
-//       "dummy3",
-//       "dummy4",
-//       "dummy5",
-//       "dummy6",
-//       "dummy7",
-//     ],
-//   });
-// });
 
 app.listen(port, () => {
   console.log(`app listening on port ${port}`);
