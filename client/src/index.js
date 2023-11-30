@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import Leaderboard from "./routes/Leaderboard";
+import Leaderboard from "./components/Leaderboard";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./routes/error-page";
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     path: "leaderboard",
     children: [
       {
-        path: ":index",
+        path: ":id",
         element: <Leaderboard />,
       },
     ],

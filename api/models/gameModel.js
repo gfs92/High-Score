@@ -8,8 +8,10 @@ const gameSchema = new mongoose.Schema({
   },
   score: {
     type: Number,
-    required: [true, "A score is required"],
+    // required: [true, "A score is required"],
   },
 });
 
 const Game = mongoose.model("Game", gameSchema);
+
+module.exports = Game;

@@ -10,27 +10,27 @@ export default function Game() {
     fetch(`${API_URL}/games`)
       .then((response) => response.json())
       .then((data) => {
-        setGames(data.games);
-        console.log(data);
+        setGames(data.data.games);
       });
   }, []);
 
   const navigate = useNavigate();
 
-  const clickHandler = (index) => {
-    navigate(`/leaderboard/${index}`);
+  const clickHandler = (gameId) => {
+    navigate(`/leaderboard/${gameId}`);
   };
 
   return (
     <div>
-      {games.map((game, index) => (
-        <button
-          onClick={() => clickHandler(index)}
-          className="Game"
-          key={index}>
-          {game}
-        </button>
-      ))}
+      {games &&
+        games.map((game, index) => (
+          <button
+            onClick={() => clickHandler(game._id)}
+            className="Game"
+            key={index}>
+            {game.name}
+          </button>
+        ))}
     </div>
   );
 }
