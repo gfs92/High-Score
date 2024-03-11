@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import Leaderboard from "./components/Leaderboard";
+import CreateGame from "./components/CreateGame";
+import Layout from "./components/Layout";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./routes/error-page";
@@ -10,17 +12,33 @@ import ErrorPage from "./routes/error-page";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <Layout>
+        <App />
+      </Layout>
+    ),
     errorElement: <ErrorPage />,
   },
   {
-    path: "leaderboard",
+    path: "/leaderboard",
     children: [
       {
         path: ":id",
-        element: <Leaderboard />,
+        element: (
+          <Layout>
+            <Leaderboard />
+          </Layout>
+        ),
       },
     ],
+  },
+  {
+    path: "/createGame",
+    element: (
+      <Layout>
+        <CreateGame />
+      </Layout>
+    ),
   },
 ]);
 

@@ -1,5 +1,41 @@
 .Leaderboard {
-  background-color: rgb(108, 119, 141);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100vh;
   overflow-y: auto;
+  color: white;
+}
+
+.Gametitle {
+  padding: 20px;
+  font-size: 2.5em;
+  font-family: "Orbitron", sans-serif;
+}
+
+.Scoretrack {
+  font-family: "Orbitron", sans-serif;
+  font-size: 2em;
+  padding-bottom: 20px;
+}
+
+.ScoreList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 30%; /* Adjust width as needed */
+}
+
+.ScoreItem {
+  display: flex;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.5em;
+}
+.Username {
+  flex-grow: 1; /* Allow the username to grow to fill available space */
+  text-align: start;
+}
+
+.Score {
+  margin-left: auto; /* Push the score to the right */
 }

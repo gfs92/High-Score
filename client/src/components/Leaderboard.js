@@ -19,11 +19,13 @@ export default function Leaderboard() {
 
   return (
     <div className="Leaderboard">
-      <div>Leaderboard for {game.name}</div>
-      <ul>
+      <div className="Gametitle">Leaderboard for {game.name}</div>
+      <div className="Scoretrack">Score to be tracked</div>
+      <ul className="ScoreList">
         {sortedScores.map(({ username, score }, index) => (
-          <li key={index}>
-            {username} : {score}
+          <li key={index} className="ScoreItem">
+            <span className="Username">{username}:</span>
+            <span className="Score">{score}</span>
           </li>
         ))}
       </ul>

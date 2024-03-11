@@ -1,0 +1,44 @@
+.Title {
+  padding: 20px;
+  text-align: center;
+
+  color: white;
+  font-family: "Orbitron", sans-serif;
+  font-size: 3em;
+}
+
+.gameForm {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.formDiv {
+  padding: 50px;
+}
+
+.inputField {
+  font-family: "Orbitron", sans-serif;
+  padding: 5px;
+  border-width: 5px;
+  border-radius: 10px;
+}
+
+.inputLabel {
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  font-size: 1.5em;
+  padding: 5px;
+}
+
+.submitButton {
+  margin-top: 20px;
+  padding: 10px;
+  justify-content: center;
+  background-color: rgb(224, 121, 53);
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  font-size: 1.5em;
+  border-radius: 10px;
+}
