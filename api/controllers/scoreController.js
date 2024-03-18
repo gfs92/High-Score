@@ -3,7 +3,16 @@ const Game = require("../models/gameModel");
 
 exports.getScores = async (req, res) => {
   try {
-    const scores = await Score.find();
+    const gameId = req.params.gameId;
+    const game = await Game.findById(gameId);
+
+    if (!game) {
+      return res.status(404).json({
+        status: "fail",
+        message: "Game not found.",
+      });
+    }
+    const scores = game.scores;
 
     res.status(200).json({
       status: "success",

@@ -8,11 +8,10 @@ export default function HeaderButtons() {
     navigate("/createGame");
   };
   return (
-    <div className="App-header">
+    <div className="buttonDiv">
       <button className="createGame" onClick={createGameHandler}>
         Add Your Game
       </button>
-      <button>Settings</button>
     </div>
   );
 }

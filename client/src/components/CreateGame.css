@@ -1,7 +1,6 @@
 .Title {
   padding: 20px;
   text-align: center;
-
   color: white;
   font-family: "Orbitron", sans-serif;
   font-size: 3em;
@@ -10,30 +9,17 @@
 .gameForm {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-direction: column;
 }
 
 .formDiv {
-  padding: 50px;
-}
-
-.inputField {
-  font-family: "Orbitron", sans-serif;
-  padding: 5px;
-  border-width: 5px;
-  border-radius: 10px;
-}
-
-.inputLabel {
-  font-family: "Orbitron", sans-serif;
-  color: white;
-  font-size: 1.5em;
-  padding: 5px;
+  padding: 15px;
+  display: flex;
+  width: 75vh;
 }
 
 .submitButton {
-  margin-top: 20px;
+  margin-top: 30px;
   padding: 10px;
   justify-content: center;
   background-color: rgb(224, 121, 53);
@@ -41,4 +27,33 @@
   color: white;
   font-size: 1.5em;
   border-radius: 10px;
+}
+.submitButton:hover {
+  cursor: pointer;
+}
+
+.fileUpload {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+.fileLabel {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1em;
+  width: 50.5%;
+  border-color: black;
+  border-width: 4px;
+  border-style: inset;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: grey;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: auto;
+  text-align: center;
 }

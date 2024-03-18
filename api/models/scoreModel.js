@@ -5,6 +5,10 @@ const scoreSchema = new mongoose.Schema({
     type: String,
     required: [true, "A username is required"],
   },
+  scoreType: {
+    type: String,
+    required: [true, "A score name is required"],
+  },
   score: {
     type: Number,
     required: [true, "A score is required"],

@@ -21,15 +21,16 @@ export default function Game() {
   };
 
   return (
-    <div>
+    <div className="gameCards">
       {games &&
         games.map((game, index) => (
-          <button
-            onClick={() => clickHandler(game._id)}
-            className="Game"
-            key={index}>
-            {game.name}
-          </button>
+          <div key={game._id}>
+            <p className="gameName">{game.gameName}</p>
+            <button
+              onClick={() => clickHandler(game._id)}
+              className="Game"
+              style={{ backgroundImage: `url(${game.imageURL})` }}></button>
+          </div>
         ))}
     </div>
   );

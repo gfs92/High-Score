@@ -7,24 +7,23 @@
 .App-header {
   display: flex;
   flex-direction: row;
-  font-size: calc(10px + 2vmin);
-  justify-content: flex-end;
+  justify-content: flex-start;
   color: white;
   width: 100%;
 }
 
-.App-title {
+.appTitle {
   font-family: "Honk", sans-serif;
   font-variation-settings: "MORF" 15, "SHLN" 26;
-  color: white;
-  font-size: 4em;
+  font-size: 5em;
+  margin: 10px;
 }
 
-.Game-Container {
+/* .gameContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   height: 80vh;
   margin: 10vh;
   justify-content: space-between;
-}
+} */

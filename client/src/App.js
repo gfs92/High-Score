@@ -5,11 +5,11 @@ import HeaderButtons from "./components/HeaderButtons";
 function App() {
   return (
     <div className="App">
-      <HeaderButtons />
       <div>
-        <p className="App-title">Hi-Score Website</p>
+        <HeaderButtons />
+        <p className="appTitle">Hi-Score Website</p>
       </div>
-      <div className="Game-Container">
+      <div className="gameContainer">
         <Game />
       </div>
     </div>
