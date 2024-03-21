@@ -5,6 +5,7 @@ export default function Layout({ children }) {
       style={{
         backgroundImage: `url(${BG_IMG})`,
         backgroundSize: "cover",
+        backgroundAttachment: "fixed",
         minHeight: "100vh",
       }}>
       {children}

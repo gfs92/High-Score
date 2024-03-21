@@ -53,7 +53,10 @@ export default function Leaderboard() {
 
   return (
     <div className="Leaderboard">
-      <div className="gameTitle">Leaderboard for {game.gameName}</div>
+      <div className="gameTitle">
+        {" "}
+        Leaderboard for <a href={game.gameURL}>{game.gameName}</a>
+      </div>
       <table className="scoreTable">
         <thead className="tableHead">
           <tr>

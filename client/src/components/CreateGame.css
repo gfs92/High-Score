@@ -15,7 +15,7 @@
 .formDiv {
   padding: 15px;
   display: flex;
-  width: 75vh;
+  width: 500px;
 }
 
 .submitButton {
@@ -41,7 +41,7 @@
 .fileLabel {
   font-family: "Orbitron", sans-serif;
   font-size: 1em;
-  width: 50.5%;
+  width: 250px;
   border-color: black;
   border-width: 4px;
   border-style: inset;

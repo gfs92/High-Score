@@ -5,7 +5,7 @@ export default function HeaderButtons() {
   const navigate = useNavigate();
 
   const createGameHandler = () => {
-    navigate("/createGame");
+    navigate("/CreateGame");
   };
   return (
     <div className="buttonDiv">

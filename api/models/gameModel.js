@@ -7,18 +7,23 @@ const gameSchema = new mongoose.Schema({
     required: [true, "A name for your game is required"],
     unique: [true, "A game with this name already exists"],
   },
+  gameURL: {
+    type: String,
+    unique: true,
+    required: false,
+  },
   scores: [Score.schema],
   scoreTypes: [
     {
       type: String,
       required: [true, "A score name to track is required"],
-      unique: [true, "duplicate score name"],
+      unique: [false],
     },
   ],
   imageUpload: {
     type: String,
     required: false,
-    unique: [true, "This image is already being used for another game"],
+    unique: false,
   },
 });
 

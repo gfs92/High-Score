@@ -5,6 +5,8 @@ import App from "./App";
 import Leaderboard from "./components/Leaderboard";
 import CreateGame from "./components/CreateGame";
 import Layout from "./components/Layout";
+import CreateGameSuccess from "./components/CreateGameSuccess";
+import CreateGameError from "./components/CreateGameError";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./routes/error-page";
@@ -33,10 +35,26 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/createGame",
+    path: "/CreateGame",
     element: (
       <Layout>
         <CreateGame />
+      </Layout>
+    ),
+  },
+  {
+    path: "/CreateGameSuccess",
+    element: (
+      <Layout>
+        <CreateGameSuccess />
+      </Layout>
+    ),
+  },
+  {
+    path: "/CreateGameError",
+    element: (
+      <Layout>
+        <CreateGameError />
       </Layout>
     ),
   },

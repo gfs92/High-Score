@@ -29,7 +29,7 @@ export default function Game() {
             <button
               onClick={() => clickHandler(game._id)}
               className="Game"
-              style={{ backgroundImage: `url(${game.imageURL})` }}></button>
+              style={{ backgroundImage: `url(${game.imageUpload})` }}></button>
           </div>
         ))}
     </div>

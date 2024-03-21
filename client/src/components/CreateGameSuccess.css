@@ -1,0 +1,21 @@
+.createGameSuccess {
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 2.5em;
+  padding: 100px;
+}
+.returnButton {
+  align-items: center;
+  margin-top: 30px;
+  padding: 10px;
+  justify-content: center;
+  background-color: rgb(224, 121, 53);
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.8em;
+  color: white;
+  border-radius: 10px;
+}
+.returnButton:hover {
+  cursor: pointer;
+}
