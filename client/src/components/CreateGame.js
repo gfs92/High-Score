@@ -60,8 +60,8 @@ export default function CreateGame() {
 
     try {
       const data = await createGame(API_URL, gameData);
-      console.log(data);
-      navigate("/CreateGameSuccess");
+
+      navigate("/CreateGameSuccess", { state: { gameId: data.data.game._id } });
     } catch (err) {
       console.error("Error creating game:", err.message);
       navigate("/CreateGameError", { state: { errorMessage: err.message } });
@@ -71,6 +71,7 @@ export default function CreateGame() {
   return (
     <div>
       <div className="Title">Add your game</div>
+
       <form
         id="createGame"
         className="gameForm"
