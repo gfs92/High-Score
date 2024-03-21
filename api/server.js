@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const app = require("./app");
 
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 mongoose
   .connect(
