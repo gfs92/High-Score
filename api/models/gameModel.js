@@ -9,8 +9,8 @@ const gameSchema = new mongoose.Schema({
   },
   gameURL: {
     type: String,
-    unique: true,
     required: false,
+    unique: true,
   },
   scores: [Score.schema],
   scoreTypes: [

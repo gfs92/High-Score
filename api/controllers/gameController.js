@@ -52,16 +52,27 @@ exports.createGame = async function (req, res) {
       imageUpload = image.cdnUrl;
     }
 
+    let gameURL = null;
+    if (req.body.gameURL) {
+      gameURL = req.body.gameURL;
+    }
+
     const scoreTypesArray = req.body.scoreTypes
       .split(",")
       .map((scoreType) => scoreType.trim());
 
-    const newGame = await Game.create({
+    const game = {
       gameName: req.body.gameName,
-      gameURL: req.body.gameURL,
       scoreTypes: scoreTypesArray,
-      imageUpload: imageUpload,
-    });
+    };
+    if (imageUpload) {
+      game.imageUpload = imageUpload;
+    }
+    if (gameURL) {
+      game.gameURL = gameURL;
+    }
+
+    const newGame = await Game.create(game);
 
     res.status(201).json({
       status: "success",

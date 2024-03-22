@@ -29,7 +29,7 @@ export default function CreateGame() {
 
     if (!response.ok) {
       if (jsonResponse.message.code === 11000) {
-        throw new Error("this game name, image, or link already exists");
+        throw new Error("this game name or link already exists");
       } else if (jsonResponse.message.name === "ValidationError") {
         throw new Error("a name for your game and score types are required");
       }
@@ -55,12 +55,16 @@ export default function CreateGame() {
     const gameData = new FormData();
     gameData.append("gameName", gameName);
     gameData.append("scoreTypes", scoreTypes);
-    gameData.append("gameURL", gameURL);
-    gameData.append("imageUpload", imageUpload);
+    if (gameURL) {
+      gameData.append("gameURL", gameURL);
+    }
+    if (selectedFile) {
+      gameData.append("imageUpload", imageUpload);
+    }
 
     try {
       const data = await createGame(API_URL, gameData);
-
+      console.log("gamedata:", data);
       navigate("/CreateGameSuccess", { state: { gameId: data.data.game._id } });
     } catch (err) {
       console.error("Error creating game:", err.message);
