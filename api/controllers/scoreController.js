@@ -55,17 +55,28 @@ exports.createScore = async (req, res) => {
       });
     }
 
-    const newScore = await Score.create({
-      ...req.body,
-      game: gameId,
-    });
+    const newScores = await Score.create(
+      req.body.map((scoreData) => ({
+        username: scoreData.username,
+        scoreType: scoreData.scoreType,
+        score: scoreData.score,
+        game: gameId,
+      }))
+    );
+    console.log("newSCore:", newScores);
+    const newScoresIds = newScores.map((score) => score._id);
 
-    game.scores.push(newScore);
+    // const newScore = await Score.create({
+    //   ...req.body,
+    //   game: gameId,
+    // });
+
+    game.scores.push(...newScores);
     await game.save();
 
     res.status(201).json({
       status: "success",
-      scores: newScore,
+      scores: newScores,
     });
   } catch (err) {
     res.status(400).json({
