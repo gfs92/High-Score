@@ -12,12 +12,30 @@ exports.getScores = async (req, res) => {
         message: "Game not found.",
       });
     }
-    const scores = game.scores;
 
+    // const scores = game.scores;
+
+    const groupedScores = game.scores.reduce((acc, cur) => {
+      const { username, scoreType, score } = cur;
+      const existingUser = acc.find((user) => user.username === username);
+
+      if (existingUser) {
+        existingUser.scores[scoreType] = score;
+      } else {
+        const newUser = {
+          username: username,
+          scores: { [scoreType]: score },
+        };
+        acc.push(newUser);
+      }
+
+      return acc;
+    }, []);
+    console.log("grouped:", groupedScores);
     res.status(200).json({
       status: "success",
-      results: scores.length,
-      data: { scores },
+      // results: scores.length,
+      data: groupedScores,
     });
   } catch (err) {
     res.status(404).json({
@@ -63,13 +81,6 @@ exports.createScore = async (req, res) => {
         game: gameId,
       }))
     );
-    console.log("newSCore:", newScores);
-    const newScoresIds = newScores.map((score) => score._id);
-
-    // const newScore = await Score.create({
-    //   ...req.body,
-    //   game: gameId,
-    // });
 
     game.scores.push(...newScores);
     await game.save();

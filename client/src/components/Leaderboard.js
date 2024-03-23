@@ -55,7 +55,10 @@ export default function Leaderboard() {
     <div className="Leaderboard">
       <div className="gameTitle">
         {" "}
-        Leaderboard for <a href={game.gameURL}>{game.gameName}</a>
+        Leaderboard for{" "}
+        <a href={game.gameURL} target="_blank" rel="noreferrer">
+          {game.gameName}
+        </a>
       </div>
       <table className="scoreTable">
         <thead className="tableHead">
