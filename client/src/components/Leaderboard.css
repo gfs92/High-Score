@@ -27,3 +27,11 @@ td {
 .tableHead {
   font-size: 1.6em;
 }
+
+a:link {
+  color: rgb(255, 255, 255);
+}
+
+a:visited {
+  color: rgb(212, 132, 10);
+}

@@ -10,20 +10,17 @@ const gameSchema = new mongoose.Schema({
   gameURL: {
     type: String,
     required: false,
-    unique: true,
   },
   scores: [Score.schema],
   scoreTypes: [
     {
       type: String,
       required: [true, "A score name to track is required"],
-      unique: [false],
     },
   ],
   imageUpload: {
     type: String,
     required: false,
-    unique: false,
   },
 });
 

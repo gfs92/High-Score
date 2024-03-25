@@ -29,7 +29,7 @@ export default function CreateGame() {
 
     if (!response.ok) {
       if (jsonResponse.message.code === 11000) {
-        throw new Error("this game name or link already exists");
+        throw new Error("this game name already exists");
       } else if (jsonResponse.message.name === "ValidationError") {
         throw new Error("a name for your game and score types are required");
       }
